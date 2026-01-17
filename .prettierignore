@@ -1,0 +1,21 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+.out
+.next
+coverage
+
+# Environment and config files
+.env*
+*.log
+
+# Lockfiles
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Misc
+.DS_Store

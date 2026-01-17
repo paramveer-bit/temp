@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+npx --no -- commitlint --edit ${1}
+
+# If everything passes... Now we can commit
+echo 'Commit message looks great!'
+

@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+echo 'Running pre-commit checks...'
+
+# Check Prettier standards
+npm run check-format ||
+(
+    echo 'Prettier check failed. Please run "npm run format" and try again.'
+    false;
+)
+
+# Check ESLint Standards
+npm run check-lint ||
+(
+    echo 'ESLint check failed. Please fix the issues listed above and try again.'
+    false; 
+)
+
+# Check TypeScript types
+npm run check-types ||
+(
+    echo 'Type check failed. Please resolve the errors before committing.'
+    false;
+)
+
+# Build Check
+echo 'Building project to ensure stability...'
+npm run build ||
+(
+    echo 'Build failed. Please check the errors above and fix them before committing.'
+    false;
+)
+
+echo 'All checks passed! Proceeding with commit...'
